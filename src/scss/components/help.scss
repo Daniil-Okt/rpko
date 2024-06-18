@@ -39,6 +39,10 @@
         svg {
             width: rem(26);
         }
+
+        @media(max-width:420px){
+            width: 100%;
+        }
     }
 }
 .block {
