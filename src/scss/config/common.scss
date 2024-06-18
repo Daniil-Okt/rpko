@@ -1,0 +1,53 @@
+// Заголовки, общие БЄМ блоки и проче...
+body {
+    color: #212529;
+    background-color: #f7f7f7;
+}
+.button {
+    display: inline-flex;
+    gap: rem(12);
+    justify-content: center;
+    align-items: center;
+    padding-right: rem(21.2);
+    padding-left: rem(21.2);
+    @include adaptiveClamp(padding-top, 16, 10);
+    @include adaptiveClamp(padding-bottom, 16, 10);
+    text-align: center;
+    background-color: #50b9ce;
+    color: var(--white);
+    border-radius: 30px;
+    font-size: rem(18);
+    transition: all 0.3s ease-in-out  0s;
+    cursor: pointer;
+    &:hover {
+        background-color: var(--blue);
+        color: #fff;
+    }
+    &.white {
+        background-color: #fff;
+        color: var(--blue);
+        &:hover {
+            background-color: var(--blue);
+            color: #fff;
+        }
+    }
+    &.blue {
+        background-color: #0074d9;
+        color: #fff;
+        &:hover {
+            background-color: var(--blue);
+            color: #fff;
+        }
+    }
+}
+
+.block {
+    @include adaptiveClamp(padding-top, 115, 45);
+}
+
+h2 {
+    font-weight: 600;
+    @include adaptiveClamp(font-size, 40, 24);
+    max-width: rem(600);
+    line-height: 120%;
+}

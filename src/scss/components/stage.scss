@@ -1,0 +1,103 @@
+.stage {
+    position: relative;
+    &::before {
+        position: absolute;
+        content: '';
+        width: rem(660);
+        height: rem(1162);
+        background: url(@img/stage-fon.png) no-repeat center center / contain;
+        top:rem(-150);
+        left: 0;
+        z-index: -1;
+        pointer-events: none;
+        @media(max-width:520px){
+            display: none;
+        }
+    }
+    &__container {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__title {
+        @include adaptiveClamp(margin-bottom, 32, 24);
+   
+    }
+
+    &__row {
+       
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        @include adaptiveClamp(gap, 20, 18);
+        @media(max-width:1125px){
+            grid-template-columns: 1fr 1fr;
+        }
+        @media(max-width:625px){
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+    }
+
+    &__button-row {
+        display: flex;
+        justify-content: center;
+        @include adaptiveClamp(margin-top, 60, 24);
+    }
+    &__button {
+        @media(max-width:420px){
+            width: 100%;
+        }
+    }
+}
+.block {
+}
+.item-stage {
+    @include adaptiveClamp(padding-top, 24, 18);
+    @include adaptiveClamp(padding-left, 24, 18);
+    @include adaptiveClamp(padding-right, 18, 13);
+    @include adaptiveClamp(padding-bottom, 18, 13);
+    @include adaptiveClamp(min-height, 195, 190);
+    height: auto;
+    box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, 0.08);
+    background: var(--white);
+    border-radius: 20px;
+    display: flex;
+    @include adaptiveClamp(gap, 20, 8);
+    // flex-direction: column;
+  
+    &__body {
+        flex: auto;
+        display: flex;
+        flex-direction: column;
+        gap: rem(12);
+        line-height: 120%;
+    }
+
+    &__title {
+        font-weight: 500;
+        line-height: 120%;
+        @include adaptiveClamp(font-size, 20, 16);
+
+    }
+    &__text {
+        @include adaptiveClamp(font-size, 15, 14);
+    }
+
+    &__img {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: end;
+        @include adaptiveClamp(width, 80, 48);
+        @include adaptiveClamp(min-width, 80, 48);
+        img {
+            width: 100%;
+        }
+        &:first-child {
+            @include adaptiveClamp(width, 90, 54);
+            @include adaptiveClamp(min-width, 90, 54);
+        }
+    }
+}
