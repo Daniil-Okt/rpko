@@ -45,7 +45,9 @@
         justify-content: center;
         @include adaptiveClamp(margin-top, 60, 24);
     }
-    &__button {
+    &__button.button {
+        @include adaptiveClamp(padding-top, 16, 15.95);
+        @include adaptiveClamp(padding-bottom, 16, 15.95);
         @media(max-width:420px){
             width: 100%;
         }
